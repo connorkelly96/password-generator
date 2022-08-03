@@ -41,8 +41,10 @@ function writePassword() {
 function generatePassword() {
   var length = prompt("How Many Characters Would You Like Your Password To Have?");
   if ( length <8 || length >128 )
-   { alert("please Enter a Number Between 8 and 128");
-  } else {
+   { alert.prompt("please Enter a Number Between 8 and 128");
+   
+  }
+  else {
 
   }
 
@@ -76,6 +78,18 @@ function generatePassword() {
   var typesArray = [upper, lower, number, symbol];
 
   console.log(typesArray)
+
+  var typesCount = upper + lower + number + symbol;
+
+  console.log('typescount', typesCount)
+
+  for(let i = 0; i < length; i += typesArray) {
+    typesArray.forEach(type => {
+      var functionName = Object.keys(type)[0]; 
+
+      generatePassword() += randomFunction[functionName]();
+    } );
+  }
 };
 
 // Add event listener to generate button
