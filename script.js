@@ -3,6 +3,12 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 
+const randomFunction = {
+lower: getRandomLower,
+upper: getRandomUpper,
+number: getRandomNumber,
+symbol: getRandomSymbol
+};
 
 function getRandomLower() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
@@ -29,6 +35,8 @@ function writePassword() {
   passwordText.value = password; 
 
 }
+
+
 
 function generatePassword() {
   var numberOfChars = prompt("How Many Characters Would You Like Your Password To Have?");
