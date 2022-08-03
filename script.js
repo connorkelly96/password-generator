@@ -3,7 +3,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 
-const randomFunction = {
+var randomFunction = {
 lower: getRandomLower,
 upper: getRandomUpper,
 number: getRandomNumber,
@@ -39,31 +39,43 @@ function writePassword() {
 
 
 function generatePassword() {
-  var numberOfChars = prompt("How Many Characters Would You Like Your Password To Have?");
-  if ( numberOfChars <8 || numberOfChars >128 )
+  var length = prompt("How Many Characters Would You Like Your Password To Have?");
+  if ( length <8 || length >128 )
    { alert("please Enter a Number Between 8 and 128");
   } else {
 
   }
 
-  var hasUpper = window.confirm("Would You Like Your Password to Contain Uppercase Letters?")
-  if (hasUpper) {
+  var upper = window.confirm("Would You Like Your Password to Contain Uppercase Letters?")
+  if (upper) {
+    
   } else {
 }
 
-  var hasLower = window.confirm("Would You Like Your Password to Contain Lowercase Letters?")
-  if (hasLower) {
-
+  var lower = window.confirm("Would You Like Your Password to Contain Lowercase Letters?")
+  if (lower) {
+  
   } else {
 
   }
 
-  var hasSymbols = window.confirm("Would You Like Your Password to Contain Special Characters?")
-  if (hasSymbols) {
-
+  var number = window.confirm("Would You Like Your Password to Contain Numbers?")
+  if (number) {
+    
   } else {
     
   }
+
+  var symbol = window.confirm("Would You Like Your Password to Contain Special Characters?")
+  if (symbol) {
+    
+  } else {
+
+  }
+
+  var typesArray = [upper, lower, number, symbol];
+
+  console.log(typesArray)
 };
 
 // Add event listener to generate button
