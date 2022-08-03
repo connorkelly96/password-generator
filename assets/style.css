@@ -32,7 +32,6 @@ header {
 
 .card {
   background-color: hsl(0, 0%, 100%);
-  border: 100px 100px;
   border-width: 1px;
   color: hsl(206, 17%, 28%);
   font-size: 18px;
