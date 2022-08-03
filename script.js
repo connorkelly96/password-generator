@@ -41,6 +41,8 @@ function writePassword() {
 function generatePassword() {
 
 let generatedPassword = " ";
+var typesArray = [];
+var typesCount = 0;
 
   var length = prompt("How Many Characters Would You Like Your Password To Have?");
   if ( length <8 || length >128 )
@@ -53,36 +55,36 @@ let generatedPassword = " ";
 
   var upper = window.confirm("Would You Like Your Password to Contain Uppercase Letters?")
   if (upper) {
-    
+    typesArray.push(upper)
+    typesCount++
   } else {
 };
 
   var lower = window.confirm("Would You Like Your Password to Contain Lowercase Letters?")
   if (lower) {
-  
+  typesArray.push(lower)
+  typesCount++
   } else {
 
   };
 
   var number = window.confirm("Would You Like Your Password to Contain Numbers?")
   if (number) {
-    
+    typesArray.push(number)
+    typesCount++ 
   } else {
     
   };
 
   var symbol = window.confirm("Would You Like Your Password to Contain Special Characters?")
   if (symbol) {
-    
+    typesArray.push(symbol)
+    typesCount++
   } else {
 
   };
 
-  var typesArray = [upper, lower, number, symbol];
 
-  console.log(typesArray)
-
-  var typesCount = upper + lower + number + symbol;
 
   //console.log('typescount', typesCount)
 
@@ -95,7 +97,8 @@ let generatedPassword = " ";
       var functionName = Object.keys(type)[0]; 
       console.log('randomFunction:', randomFunction)
 
-      generatePassword() += randomFunction[functionName]();
+      generatedPassword += randomFunction[functionName]();
+      console.log(generatedPassword)
     } );
   }
 };
