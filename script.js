@@ -40,12 +40,30 @@ function writePassword() {
 
 function generatePassword() {
   var numberOfChars = prompt("How Many Characters Would You Like Your Password To Have?");
-  if ( number <8 || number >128 ) {
-    prompt("Please Select a Number Between 8 and 128")
-  };
+  if ( numberOfChars <8 || numberOfChars >128 )
+   { alert("please Enter a Number Between 8 and 128");
+  } else {
 
+  }
 
-  return 
+  var hasUpper = window.confirm("Would You Like Your Password to Contain Uppercase Letters?")
+  if (hasUpper) {
+  } else {
+}
+
+  var hasLower = window.confirm("Would You Like Your Password to Contain Lowercase Letters?")
+  if (hasLower) {
+
+  } else {
+
+  }
+
+  var hasSymbols = window.confirm("Would You Like Your Password to Contain Special Characters?")
+  if (hasSymbols) {
+
+  } else {
+    
+  }
 };
 
 // Add event listener to generate button
